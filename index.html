@@ -948,8 +948,82 @@
   }
 
   /* ─── MOBILE ─── */
+  /* ─── HAMBURGER ─── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--text2);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+    background: var(--text);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+    background: var(--text);
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: 60px;
+    background: rgba(8,11,16,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text2);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    padding: 0.75rem 2rem;
+    transition: color 0.2s;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-menu a:hover { color: var(--accent); }
+
   @media (max-width: 768px) {
     nav { padding: 0 1.25rem; }
+
+    .hamburger { display: flex; }
 
     .nav-links {
       display: none;
@@ -1000,7 +1074,22 @@
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</div>
 
 <!-- ─── HERO ─── -->
 <section id="hero">
@@ -1031,6 +1120,10 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
         Email
       </a>
+      <a href="/Estifanos_Teklearegay_Resume.pdf" download class="btn btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Resume
+      </a>
     </div>
   </div>
   <div class="scroll-indicator">
@@ -1051,24 +1144,24 @@
         </div>
         <div class="about-text reveal reveal-delay-2">
           <p>
-            I'm an IT Support Engineer Intern at <strong>Microsoft / Activision</strong>, engineering solutions for enterprise infrastructure while building full-stack applications in Java and Spring Boot on the side.
+            I'm an IT Support Engineer Intern at <strong>Activision · Microsoft</strong>, resolving 25–40 Service Desk incidents weekly via ServiceNow — spanning Okta SSO, Active Directory, Microsoft 365, and network infrastructure at enterprise scale.
           </p>
           <p>
-            I completed the <strong>Year Up United App Development</strong> program — an intensive, corporate-partnered training that placed me at one of the world's most recognized tech companies. I ship production-grade code, not just tutorials.
+            I completed the <strong>Year Up United App Development</strong> program — an intensive, corporate-partnered track that placed me at one of the world's largest studios. I've shipped three Java capstone projects, progressing from CLI applications to a full Spring Boot API with JWT auth, Spring Security, and MySQL persistence.
           </p>
           <p>
-            Currently expanding into <strong>Python and AI tooling</strong> — integrating LLMs and data pipelines into the software I build. Based in LA, looking for engineering roles where complexity is a feature, not a problem.
+            Actively expanding into <strong>Python and AI tooling</strong>. Based in LA, seeking a junior software engineering role where I can contribute immediately and grow fast.
           </p>
         </div>
       </div>
       <div class="about-stats">
         <div class="stat-card reveal reveal-delay-1">
-          <div class="stat-number">01</div>
-          <div class="stat-label">IT Intern @ Microsoft / Activision — enterprise scale</div>
+          <div class="stat-number">25–40</div>
+          <div class="stat-label">Incidents resolved/week @ Microsoft · Activision via ServiceNow</div>
         </div>
         <div class="stat-card reveal reveal-delay-2">
           <div class="stat-number">6+</div>
-          <div class="stat-label">Projects shipped — Java, React, Python, APIs</div>
+          <div class="stat-label">3 shipped · 3 in progress — Java, Spring Boot, React</div>
         </div>
         <div class="stat-card reveal reveal-delay-3">
           <div class="stat-number">2x</div>
@@ -1133,9 +1226,9 @@
         <div class="skill-icon">🐍</div>
         <div class="skill-info">
           <span class="skill-name">Python</span>
-          <span class="skill-type">scripting · AI</span>
+          <span class="skill-type">learning · building</span>
         </div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:35%"></div></div>
       </div>
 
       <div class="skill-item reveal reveal-delay-3">
@@ -1166,7 +1259,7 @@
       </div>
 
       <div class="skill-item reveal reveal-delay-3">
-        <div class="skill-icon">🍃</div>
+        <div class="skill-icon">🍀</div>
         <div class="skill-info">
           <span class="skill-name">MongoDB</span>
           <span class="skill-type">document db</span>
@@ -1196,9 +1289,9 @@
         <div class="skill-icon">🐳</div>
         <div class="skill-info">
           <span class="skill-name">Docker</span>
-          <span class="skill-type">containerization</span>
+          <span class="skill-type">learning</span>
         </div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:30%"></div></div>
       </div>
 
       <div class="skill-item reveal reveal-delay-1">
@@ -1208,6 +1301,42 @@
           <span class="skill-type">version control</span>
         </div>
         <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
+      </div>
+
+      <div class="skill-item reveal reveal-delay-2">
+        <div class="skill-icon">🛡</div>
+        <div class="skill-info">
+          <span class="skill-name">Spring Security</span>
+          <span class="skill-type">auth framework</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+      </div>
+
+      <div class="skill-item reveal reveal-delay-3">
+        <div class="skill-icon">🔗</div>
+        <div class="skill-info">
+          <span class="skill-name">JDBC</span>
+          <span class="skill-type">data access</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div>
+      </div>
+
+      <div class="skill-item reveal reveal-delay-1">
+        <div class="skill-icon">🎫</div>
+        <div class="skill-info">
+          <span class="skill-name">ServiceNow</span>
+          <span class="skill-type">enterprise ITSM</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+      </div>
+
+      <div class="skill-item reveal reveal-delay-2">
+        <div class="skill-icon">🔑</div>
+        <div class="skill-info">
+          <span class="skill-name">Okta · Active Directory</span>
+          <span class="skill-type">identity & access</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
       </div>
 
     </div>
@@ -1231,13 +1360,16 @@
           <span class="badge badge-live">Shipped</span>
         </div>
         <p class="project-desc">
-          Full-stack e-commerce API for an online record store. Persistent cart, role-based auth, complete CRUD for catalog and orders.
+          Full-stack e-commerce API and frontend client for an online record store. JWT auth with BCrypt hashing, role-based endpoint access, and a persistent shopping cart using a composite primary key with ON DUPLICATE KEY UPDATE.
         </p>
         <div class="tech-pills">
           <span class="pill">Java</span>
           <span class="pill">Spring Boot</span>
+          <span class="pill">Spring Security</span>
           <span class="pill">JWT</span>
           <span class="pill">MySQL</span>
+          <span class="pill">JDBC</span>
+          <span class="pill">REST API</span>
         </div>
         <div class="project-actions">
           <a href="https://github.com/Estif017/root-note-records" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem">
@@ -1255,13 +1387,15 @@
           <span class="badge badge-live">Shipped</span>
         </div>
         <p class="project-desc">
-          CLI food-ordering application with JSON-driven menu system and polymorphic order model. Clean OOP architecture, no framework needed.
+          Interactive CLI food-ordering app with a data-driven menu loaded from JSON via Gson. Polymorphic Orderable interface manages Pizza, Drink, and Side items in a single typed collection. Generates timestamped receipt files on checkout.
         </p>
         <div class="tech-pills">
-          <span class="pill">Java</span>
+          <span class="pill">Java 17</span>
           <span class="pill">Maven</span>
+          <span class="pill">Gson</span>
           <span class="pill">OOP</span>
           <span class="pill">JSON</span>
+          <span class="pill">File I/O</span>
         </div>
         <div class="project-actions">
           <a href="https://github.com/Estif017/FusionBite-" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem">
@@ -1279,12 +1413,14 @@
           <span class="badge badge-live">Shipped</span>
         </div>
         <p class="project-desc">
-          CLI accounting ledger with multi-field transaction sorting, robust input validation, and persistent File I/O. Built around enums and clean data modeling.
+          Java CLI accounting ledger for tracking deposits and payments. Multi-field sorting via Comparator with lambdas, Enum-based menu navigation, typed input validation, and CSV persistence — modular screens for home, ledger, reports, and sorting.
         </p>
         <div class="tech-pills">
           <span class="pill">Java</span>
           <span class="pill">File I/O</span>
+          <span class="pill">OOP</span>
           <span class="pill">Enums</span>
+          <span class="pill">Comparator / Lambda</span>
         </div>
         <div class="project-actions">
           <a href="https://github.com/Estif017/LedgerLink" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem">
@@ -1374,14 +1510,15 @@
         <div class="timeline-role">IT Support Engineer Intern</div>
         <div class="timeline-org">Microsoft · Activision — Los Angeles, CA</div>
         <p class="timeline-desc">
-          Supporting enterprise infrastructure at one of gaming's largest studios. Troubleshooting hardware, software, and network issues at scale — touching systems used by thousands of employees across multiple sites.
+          Resolving 25–40 Service Desk incidents weekly via ServiceNow — diagnosing Okta SSO and Active Directory access issues, supporting Microsoft 365, Exchange, and Teams, and troubleshooting Wi-Fi, VPN, and LAN. Imaging and deploying laptops for onboarding; managing hardware shipping and asset tracking.
         </p>
         <div class="timeline-tags">
-          <span class="tag">Enterprise IT</span>
-          <span class="tag">Network Support</span>
-          <span class="tag">Hardware</span>
-          <span class="tag">Ticketing Systems</span>
-          <span class="tag">Microsoft Ecosystem</span>
+          <span class="tag">ServiceNow</span>
+          <span class="tag">Okta SSO</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">Microsoft 365</span>
+          <span class="tag">Network / VPN</span>
+          <span class="tag">Hardware Deployment</span>
         </div>
       </div>
 
@@ -1391,12 +1528,13 @@
         <div class="timeline-role">Valet Attendant</div>
         <div class="timeline-org">AAA Parking — Los Angeles, CA</div>
         <p class="timeline-desc">
-          High-pressure, customer-facing role requiring situational awareness, rapid decision-making, and clear communication. Operational efficiency under time constraints.
+          Managing parking operations for 150+ vehicles daily while maintaining safety protocols and guest service standards. Operating digital systems including Excel, Lightspeed, and CVPS for vehicle tracking and payment processing.
         </p>
         <div class="timeline-tags">
-          <span class="tag">Customer Experience</span>
           <span class="tag">Operations</span>
-          <span class="tag">Time Management</span>
+          <span class="tag">Customer Experience</span>
+          <span class="tag">Lightspeed</span>
+          <span class="tag">CVPS</span>
         </div>
       </div>
 
@@ -1462,7 +1600,7 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Estifanos Teklearegay</p>
-  <p>Built with intention. No frameworks. Just code.</p>
+  <p>Built with intention. No frameworks. Just code. — <a href="https://estifanos-portfolio.vercel.app" target="_blank" rel="noopener">estifanos-portfolio.vercel.app</a></p>
 </footer>
 
 <script>
@@ -1601,6 +1739,24 @@
       heroName.style.letterSpacing = '-0.03em';
     });
   }
+
+  // ─── HAMBURGER MENU ───
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', function() {
+    var open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
 
   // ─── INIT ───
   onScroll();
