@@ -1120,10 +1120,10 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
         Email
       </a>
-      <a href="/Estifanos_Teklearegay_Resume.pdf" download class="btn btn-ghost">
+      <button class="btn btn-disabled" disabled>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Resume
-      </a>
+        Resume — soon
+      </button>
     </div>
   </div>
   <div class="scroll-indicator">
@@ -1144,13 +1144,13 @@
         </div>
         <div class="about-text reveal reveal-delay-2">
           <p>
-            I'm an IT Support Engineer Intern at <strong>Activision · Microsoft</strong>, resolving 25–40 Service Desk incidents weekly via ServiceNow — spanning Okta SSO, Active Directory, Microsoft 365, and network infrastructure at enterprise scale.
+            I'm an IT Support Engineer Intern at <strong>Activision · Microsoft</strong>, where I build conversational AI agents in <strong>Microsoft Copilot Studio</strong> and resolve 25–40 Service Desk incidents weekly via ServiceNow — spanning Okta SSO, Active Directory, Microsoft 365, and network infrastructure at enterprise scale.
           </p>
           <p>
             I completed the <strong>Year Up United App Development</strong> program — an intensive, corporate-partnered track that placed me at one of the world's largest studios. I've shipped three Java capstone projects, progressing from CLI applications to a full Spring Boot API with JWT auth, Spring Security, and MySQL persistence.
           </p>
           <p>
-            Actively expanding into <strong>Python and AI tooling</strong>. Based in LA, seeking a junior software engineering role where I can contribute immediately and grow fast.
+            Beyond the day job I build with <strong>Python and AI tooling</strong> — including full-stack apps wired into the Claude API. Based in LA, seeking a junior software engineering role where I can contribute immediately and grow fast.
           </p>
         </div>
       </div>
@@ -1339,6 +1339,33 @@
         <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
       </div>
 
+      <div class="skill-item reveal reveal-delay-3">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-info">
+          <span class="skill-name">Copilot Studio</span>
+          <span class="skill-type">AI agents · low-code</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+      </div>
+
+      <div class="skill-item reveal reveal-delay-1">
+        <div class="skill-icon">🧠</div>
+        <div class="skill-info">
+          <span class="skill-name">Claude API</span>
+          <span class="skill-type">LLM integration</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
+      </div>
+
+      <div class="skill-item reveal reveal-delay-2">
+        <div class="skill-icon">💾</div>
+        <div class="skill-info">
+          <span class="skill-name">SQL</span>
+          <span class="skill-type">queries · schema design</span>
+        </div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1352,6 +1379,33 @@
       <div class="section-line"></div>
     </div>
     <div class="projects-grid">
+
+      <!-- JobNest -->
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-card-top">
+          <span class="project-name">JobNest</span>
+          <span class="badge badge-live">Shipped</span>
+        </div>
+        <p class="project-desc">
+          AI-powered job application tracker. A background agent scrapes fresh roles every 24h, Claude scores each against your resume, and agentic tool-use (web search + resume) writes tailored cover letters and interview prep on demand. Next.js frontend over a FastAPI backend.
+        </p>
+        <div class="tech-pills">
+          <span class="pill">Next.js 14</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">Python</span>
+          <span class="pill">Claude API</span>
+          <span class="pill">Tavily</span>
+          <span class="pill">SQLite</span>
+          <span class="pill">NextAuth</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/Estif017/JobNest" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://frontend-production-0469.up.railway.app/login?callbackUrl=%2F" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem;padding:0.5rem 1rem">Live Demo</a>
+        </div>
+      </div>
 
       <!-- Root Note Records -->
       <div class="project-card reveal reveal-delay-1">
@@ -1438,34 +1492,22 @@
           <span class="badge badge-progress">In Progress</span>
         </div>
         <p class="project-desc">
-          Music discovery app powered by the Spotify API. Browse, explore, and surface recommendations through a modern React interface.
+          A free, ad-free music streaming PWA. Searches the YouTube Music catalog, streams via a range-aware Fastify audio proxy with Redis-cached URLs, supports offline downloads (OPFS + IndexedDB), and shows synced lyrics. Built as a pnpm/Turborepo monorepo.
         </p>
         <div class="tech-pills">
-          <span class="pill">React</span>
-          <span class="pill">Node.js</span>
-          <span class="pill">Spotify API</span>
+          <span class="pill">Next.js 15</span>
+          <span class="pill">React 19</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">Fastify</span>
+          <span class="pill">Zustand</span>
+          <span class="pill">Redis</span>
+          <span class="pill">PWA</span>
         </div>
         <div class="project-actions">
-          <button class="btn btn-disabled" style="font-size:0.8rem;padding:0.5rem 1rem" disabled>GitHub — soon</button>
-          <button class="btn btn-disabled" style="font-size:0.8rem;padding:0.5rem 1rem" disabled>Live — soon</button>
-        </div>
-      </div>
-
-      <!-- AI Tool -->
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-card-top">
-          <span class="project-name">AI Dev Tool</span>
-          <span class="badge badge-progress">In Progress</span>
-        </div>
-        <p class="project-desc">
-          AI-powered developer productivity tool built on the Claude API. Automates repetitive engineering tasks with context-aware LLM assistance.
-        </p>
-        <div class="tech-pills">
-          <span class="pill">Python</span>
-          <span class="pill">Claude API</span>
-        </div>
-        <div class="project-actions">
-          <button class="btn btn-disabled" style="font-size:0.8rem;padding:0.5rem 1rem" disabled>GitHub — soon</button>
+          <a href="https://github.com/Estif017/Tunely" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
           <button class="btn btn-disabled" style="font-size:0.8rem;padding:0.5rem 1rem" disabled>Live — soon</button>
         </div>
       </div>
@@ -1510,31 +1552,17 @@
         <div class="timeline-role">IT Support Engineer Intern</div>
         <div class="timeline-org">Microsoft · Activision — Los Angeles, CA</div>
         <p class="timeline-desc">
-          Resolving 25–40 Service Desk incidents weekly via ServiceNow — diagnosing Okta SSO and Active Directory access issues, supporting Microsoft 365, Exchange, and Teams, and troubleshooting Wi-Fi, VPN, and LAN. Imaging and deploying laptops for onboarding; managing hardware shipping and asset tracking.
+          Built and configured conversational AI agents in <strong>Microsoft Copilot Studio</strong> — designing conversation topics, triggers, and response logic — and created reusable templates that standardized agent development and sped up deployment across the team. Alongside this, resolving 25–40 Service Desk incidents weekly via ServiceNow — diagnosing Okta SSO and Active Directory access issues, supporting Microsoft 365, Exchange, and Teams, and troubleshooting Wi-Fi, VPN, and LAN. Imaging and deploying laptops for onboarding; managing hardware shipping and asset tracking.
         </p>
         <div class="timeline-tags">
+          <span class="tag">Copilot Studio</span>
+          <span class="tag">AI Agents</span>
           <span class="tag">ServiceNow</span>
           <span class="tag">Okta SSO</span>
           <span class="tag">Active Directory</span>
           <span class="tag">Microsoft 365</span>
           <span class="tag">Network / VPN</span>
           <span class="tag">Hardware Deployment</span>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal reveal-delay-2">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">Mar 2025 — Present</div>
-        <div class="timeline-role">Valet Attendant</div>
-        <div class="timeline-org">AAA Parking — Los Angeles, CA</div>
-        <p class="timeline-desc">
-          Managing parking operations for 150+ vehicles daily while maintaining safety protocols and guest service standards. Operating digital systems including Excel, Lightspeed, and CVPS for vehicle tracking and payment processing.
-        </p>
-        <div class="timeline-tags">
-          <span class="tag">Operations</span>
-          <span class="tag">Customer Experience</span>
-          <span class="tag">Lightspeed</span>
-          <span class="tag">CVPS</span>
         </div>
       </div>
 
@@ -1553,8 +1581,8 @@
     <div class="edu-grid">
 
       <div class="edu-card reveal reveal-delay-1">
-        <div class="edu-period">Aug 2025 — Present</div>
-        <div class="edu-degree">App Development Track</div>
+        <div class="edu-period">Aug 2025 — Jul 2026</div>
+        <div class="edu-degree">Application Development Training</div>
         <div class="edu-school">Year Up United — Los Angeles, CA</div>
         <div class="edu-note">// corporate-partnered · placed at Microsoft/Activision</div>
       </div>
